@@ -19,6 +19,13 @@ import urlparse
 def home():
     """Render website's home page."""
     return render_template('home.html')
+    
+@app.route('/api/users/register', methods=['POST'])
+def signup():
+    if request.methods == 'POSt':
+        email = request.form['Email']
+        password = request.form['Password']
+    return render_template('signup.html')
 
 
 ###
